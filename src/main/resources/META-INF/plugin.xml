@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>io.github.flinkpreview</id>
+    <name>Flink Pipeline Preview</name>
+    <vendor>Flink Pipeline Preview</vendor>
+    <description><![CDATA[
+        <p>Shows the Apache Flink DataStream pipeline built by the Java code you are editing as a live graph.</p>
+        <ul>
+            <li>Static analysis of DataStream API call chains (Flink 1.x and 2.x, including the DataStream V2 API)</li>
+            <li>Follows local variables, reassignments, helper methods, unions, connects, side outputs and broadcasts</li>
+            <li>Click a node to jump to its code; the node under the caret is highlighted</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Flink Pipeline"
+                    anchor="right"
+                    icon="/icons/flinkPipeline.svg"
+                    factoryClass="io.github.flinkpreview.ui.FlinkPipelineToolWindowFactory"/>
+    </extensions>
+</idea-plugin>
